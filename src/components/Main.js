@@ -49,7 +49,7 @@ class ImgFigure extends React.Component {
 
   render() {
     var styleObj = {};
-    //如果props属性中指定了这张图片的位置,则使用
+    //如果props属性中指定了这张图片的位置,则使用 
     if (this.props.arrange.pos) {
       styleObj = this.props.arrange.pos;
     }
@@ -66,16 +66,18 @@ class ImgFigure extends React.Component {
 
     let imgFigureClassName = 'img-figure';
     imgFigureClassName += this.props.arrange.isInverse ? ' is-inverse ' : '';
-
+    let result = this.props.data.desc.split('\n');
+    let desc = [];
+    result.forEach((value, index) => {
+      desc.push(<p>{value}</p>);
+    });
     return (
       <figure className={ imgFigureClassName } style={ styleObj } onClick={this.handleClick}>
         <img src={this.props.data.imageURL} alt={this.props.data.title}/>
         <figcaption>
           <h2 className="img-title">{this.props.data.title}</h2>
           <div className="img-back" onClick={this.handleClick}>
-            <p>
-              {this.props.data.desc}
-            </p>
+           {desc}
           </div>
         </figcaption>
       </figure>

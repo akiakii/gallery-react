@@ -32,7 +32,7 @@ html, body {
 }
 .img-figure{
   width:320px;
-  height: 440px;
+  height: 480px;
   margin:0;
   padding: 40px;
   box-sizing: border-box;
@@ -56,6 +56,10 @@ html, body {
       transform: rotateY(180deg) translateZ(1px);
       backface-visibility:hidden;
       background: #fff;
+}
+p{
+  text-align: left;
+  text-indent:2em;
 }
 .is-center {
         background: #888888;
